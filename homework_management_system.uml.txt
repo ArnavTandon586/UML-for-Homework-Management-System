@@ -1,0 +1,114 @@
++------------------------------------+
+|              User                  |
++------------------------------------+
+| - username: str                    |
+| - password: str                    |
+| - role: str                        |
++------------------------------------+
+| + login(username: str, password: str) |
+| + logout()                         |
++------------------------------------+
+                   ^
+                   |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|               Student              |
++------------------------------------+
+| - classes: LinkedList<Class>       |
+| - tasks: 2DArray<Task>             |
++------------------------------------+
+| + submit_assignment(task_id: int, file_path: str) |
+| + view_grades(task_id: int)        |
+| + start_conversation(teacher_id: int, message: str) |
+| + view_messages()                  |
+| + view_tasks(class_id: int)        |
++------------------------------------+
+                   ^
+                   |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|               Teacher              |
++------------------------------------+
+| - classes: LinkedList<Class>       |
++------------------------------------+
+| + create_class(class_name: str)    |
+| + create_task(class_id: int, task_name: str, due_date: str) |
+| + grade_assignment(submission_id: int, grade: int, feedback: str) |
+| + view_submissions(task_id: int)   |
+| + start_conversation(student_id: int, message: str) |
+| + view_messages()                  |
+| + view_tasks(class_id: int)        |
++------------------------------------+
+                   ^
+                   |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|                Class               |
++------------------------------------+
+| - class_name: str                  |
+| - teacher_id: int                  |
+| - tasks: LinkedList<Task>          |
+| - students: Queue<Student>         |
++------------------------------------+
+| + add_student(student: Student)    |
+| + remove_student(student_id: int)  |
+| + get_students()                   |
++------------------------------------+
+                   ^
+                   |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|                Task                |
++------------------------------------+
+| - task_name: str                   |
+| - due_date: str                    |
+| - submissions: LinkedList<Submission> |
++------------------------------------+
+| + add_submission(submission: Submission) |
+| + remove_submission(submission_id: int) |
+| + get_submissions()                |
++------------------------------------+
+                   ^
+                   |
++------------------+-----------------+
+|                                    |
+|                                    |
+|                                    |
++------------------+-----------------+
+|            Submission              |
++------------------------------------+
+| - student_id: int                  |
+| - file_path: str                   |
+| - grade: int                       |
+| - feedback: str                    |
++------------------------------------+
+|                                    |
++------------------------------------+
